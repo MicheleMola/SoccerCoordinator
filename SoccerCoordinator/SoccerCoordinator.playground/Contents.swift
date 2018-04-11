@@ -64,15 +64,27 @@ if (numberOfExperiencedPlayers % numberOfTeams != 0 || numberOfNotExperiencedPla
   print("Unbalanced teams")
 }
 
-// Sort with different methods (DESC and ASC) to minimize average heights between teams
+/*
+ Sort with different methods (DESC and ASC) to minimize average heights between teams. The highest experienced player will be in team with the lowest not experienced player.
+*/
 
 // Sort experienced players group for DESC
-experiencedPlayers.sort(by: { $0["height"] as! Double > $1["height"] as! Double })
+experiencedPlayers.sort(by: {
+  guard let h0 = $0["height"] as? Double , let h1 = $1["height"] as? Double else { return false }
+    return h0 > h1
+})
 
 // Sort not experienced players group for ASC
-notExperiencedPlayers.sort(by: { $1["height"] as! Double > $0["height"] as! Double })
+notExperiencedPlayers.sort(by: {
+  guard let h0 = $0["height"] as? Double , let h1 = $1["height"] as? Double else { return false }
+    return h1 > h0
+})
 
-// Function to assign players to the teams
+
+/*
+ Function to assign players to the teams
+ I assign one player at a time to the team (Our example: First player in experieced group -> First team, Second player in experienced group -> Second team, Third player in experienced group -> Third team, Fourth player in experienced group -> First team)
+*/
 func assignPlayers(forGroup group: [[String: Any]]) {
   var index = 0
   for i in 0..<group.count {
