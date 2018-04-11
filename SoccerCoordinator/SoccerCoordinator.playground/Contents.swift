@@ -4,24 +4,24 @@ import UIKit
 
 // --- Part 1 ---
 let players: [[String: Any]] = [
-  ["name": "Joe Smith", "height": 42.0, "experience": true, "guardianNames": "Jim and Jan Smith"],
-  ["name": "Jill Tanner", "height": 36.0, "experience": true, "guardianNames": "Clara Tanner"],
-  ["name": "Bill Bon", "height": 43.0, "experience": true, "guardianNames": "Sara and Jenny Bon"],
-  ["name": "Eva Gordon", "height": 45.0, "experience": false, "guardianNames": "Wendy and Mike Gordon"],
-  ["name": "Matt Gill", "height": 40.0, "experience": false, "guardianNames": "Charles and Sylvia Gill"],
-  ["name": "Kimmy Stein", "height": 41.0, "experience": false, "guardianNames": "Bill and Hillary Stein"],
-  ["name": "Sammy Adams", "height": 45.0, "experience": false, "guardianNames": "Jeff Adams"],
-  ["name": "Karl Saygan", "height": 42.0, "experience": true, "guardianNames": "Heather Bledsoe"],
-  ["name": "Suzane Greenberg", "height": 44.0, "experience": true, "guardianNames": "Henrietta Dumas"],
-  ["name": "Sal Dali", "height": 41.0, "experience": false, "guardianNames": "Gala Dali"],
-  ["name": "Joe Kavalier", "height": 39.0, "experience": false, "guardianNames": "Sam and Elaine Kavalier"],
-  ["name": "Ben Finkelstein", "height": 44.0, "experience": false, "guardianNames": "Aaron and Jill Finkelstein"],
-  ["name": "Diego Soto", "height": 41.0, "experience": true, "guardianNames": "Robin and Sarika Soto"],
-  ["name": "Chloe Alaska", "height": 47.0, "experience": false, "guardianNames": "David and Jamie Alaska"],
-  ["name": "Arnold Willis", "height": 43.0, "experience": false, "guardianNames": "Claire Willis"],
-  ["name": "Phillip Helm", "height": 44.0, "experience": true, "guardianNames": "Thomas Helm and Eva Jones"],
-  ["name": "Les Clay", "height": 42.0, "experience": true, "guardianNames": "Wynonna Brown"],
-  ["name": "Herschel Krustofski", "height": 45.0, "experience": true, "guardianNames": "Hyman and Rachel Krustofski"]
+  ["name": "Joe Smith", "height": 42.0, "hasSoccerExperience": true, "guardianNames": "Jim and Jan Smith"],
+  ["name": "Jill Tanner", "height": 36.0, "hasSoccerExperience": true, "guardianNames": "Clara Tanner"],
+  ["name": "Bill Bon", "height": 43.0, "hasSoccerExperience": true, "guardianNames": "Sara and Jenny Bon"],
+  ["name": "Eva Gordon", "height": 45.0, "hasSoccerExperience": false, "guardianNames": "Wendy and Mike Gordon"],
+  ["name": "Matt Gill", "height": 40.0, "hasSoccerExperience": false, "guardianNames": "Charles and Sylvia Gill"],
+  ["name": "Kimmy Stein", "height": 41.0, "hasSoccerExperience": false, "guardianNames": "Bill and Hillary Stein"],
+  ["name": "Sammy Adams", "height": 45.0, "hasSoccerExperience": false, "guardianNames": "Jeff Adams"],
+  ["name": "Karl Saygan", "height": 42.0, "hasSoccerExperience": true, "guardianNames": "Heather Bledsoe"],
+  ["name": "Suzane Greenberg", "height": 44.0, "hasSoccerExperience": true, "guardianNames": "Henrietta Dumas"],
+  ["name": "Sal Dali", "height": 41.0, "hasSoccerExperience": false, "guardianNames": "Gala Dali"],
+  ["name": "Joe Kavalier", "height": 39.0, "hasSoccerExperience": false, "guardianNames": "Sam and Elaine Kavalier"],
+  ["name": "Ben Finkelstein", "height": 44.0, "hasSoccerExperience": false, "guardianNames": "Aaron and Jill Finkelstein"],
+  ["name": "Diego Soto", "height": 41.0, "hasSoccerExperience": true, "guardianNames": "Robin and Sarika Soto"],
+  ["name": "Chloe Alaska", "height": 47.0, "hasSoccerExperience": false, "guardianNames": "David and Jamie Alaska"],
+  ["name": "Arnold Willis", "height": 43.0, "hasSoccerExperience": false, "guardianNames": "Claire Willis"],
+  ["name": "Phillip Helm", "height": 44.0, "hasSoccerExperience": true, "guardianNames": "Thomas Helm and Eva Jones"],
+  ["name": "Les Clay", "height": 42.0, "hasSoccerExperience": true, "guardianNames": "Wynonna Brown"],
+  ["name": "Herschel Krustofski", "height": 45.0, "hasSoccerExperience": true, "guardianNames": "Hyman and Rachel Krustofski"]
 ]
 
 
@@ -49,8 +49,8 @@ let numberOfPlayersForTeam = numberOfPlayers / numberOfTeams
 
 for player in players {
   // Type casting and check with guard let
-  guard let experience = player["experience"] as? Bool else { break }
-  if (experience) {
+  guard let isExperienced = player["hasSoccerExperience"] as? Bool else { break }
+  if (isExperienced) {
     experiencedPlayers.append(player)
   } else {
     notExperiencedPlayers.append(player)
