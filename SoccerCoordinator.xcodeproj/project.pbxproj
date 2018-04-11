@@ -22,6 +22,7 @@
 		3A3F584D1FD190C600B8D84B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A3F58501FD190C600B8D84B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A3F58521FD190C600B8D84B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE183822207DF44D00321689 /* SoccerCoordinator.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = SoccerCoordinator.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +55,7 @@
 		3A3F58451FD190C600B8D84B /* SoccerCoordinator */ = {
 			isa = PBXGroup;
 			children = (
+				DE183822207DF44D00321689 /* SoccerCoordinator.playground */,
 				3A3F58461FD190C600B8D84B /* AppDelegate.swift */,
 				3A3F58481FD190C600B8D84B /* ViewController.swift */,
 				3A3F584A1FD190C600B8D84B /* Main.storyboard */,
